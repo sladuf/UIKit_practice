@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class ViewController: UIViewController {
     
@@ -155,53 +156,55 @@ final class ViewController: UIViewController {
         passwdBoxView.addSubview(passwdSecureButton)
         
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.centerY.equalTo(view)
+            make.leading.equalTo(view).offset(30)
+            make.trailing.equalTo(view).offset(-30)
+            make.height.equalTo(textViewHeight*3 + 36)
+        }
         
-        emailInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        emailInfoLabel.snp.makeConstraints { make in
+            make.leading.equalTo(emailBoxView).offset(8)
+            make.trailing.equalTo(emailBoxView).offset(8)
+        }
         
-        passwdInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        passwdTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwdSecureButton.translatesAutoresizingMaskIntoConstraints = false
+        emailTextField.snp.makeConstraints { make in
+            make.edges.equalTo(emailBoxView).inset(UIEdgeInsets(top: 15, left: 8, bottom: 2, right: 8))
+        }
         
-        passwdResetButton.translatesAutoresizingMaskIntoConstraints = false
+        passwdInfoLabel.snp.makeConstraints { make in
+            make.leading.equalTo(passwdBoxView).offset(8)
+            make.trailing.equalTo(passwdBoxView).offset(8)
+        }
         
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 36).isActive = true
+        passwdTextField.snp.makeConstraints { make in
+            make.edges.equalTo(passwdBoxView).inset(UIEdgeInsets(top: 15, left: 8, bottom: 2, right: 8))
+        }
+        
+        passwdSecureButton.snp.makeConstraints { make in
+            make.top.equalTo(passwdBoxView).offset(15)
+            make.bottom.equalTo(passwdBoxView).offset(-15)
+            make.trailing.equalTo(passwdBoxView).offset(-8)
+        }
+        
+        passwdResetButton.snp.makeConstraints { make in
+            make.leading.equalTo(view).offset(30)
+            make.trailing.equalTo(view).offset(-30)
+            make.top.equalTo(stackView.snp.bottom).offset(10)
+            make.height.equalTo(textViewHeight)
+        }
         
         //autoLayout isActive = true 없이 작성
         NSLayoutConstraint.activate([
-            emailInfoLabel.leadingAnchor.constraint(equalTo: emailBoxView.leadingAnchor, constant: 8),
-            emailInfoLabel.trailingAnchor.constraint(equalTo: emailBoxView.trailingAnchor, constant: 8),
+
 //            emailInfoLabel.centerYAnchor.constraint(equalTo: emailBoxView.centerYAnchor),
             emailInfoLabelCenterYConstraint,
             
-            emailTextField.leadingAnchor.constraint(equalTo: emailBoxView.leadingAnchor, constant: 8),
-            emailTextField.trailingAnchor.constraint(equalTo: emailBoxView.trailingAnchor, constant: 8),
-            emailTextField.topAnchor.constraint(equalTo: emailBoxView.topAnchor, constant: 15),
-            emailTextField.bottomAnchor.constraint(equalTo: emailBoxView.bottomAnchor, constant: 2),
-            
-            passwdInfoLabel.leadingAnchor.constraint(equalTo: passwdBoxView.leadingAnchor, constant: 8),
-            passwdInfoLabel.trailingAnchor.constraint(equalTo: passwdBoxView.trailingAnchor, constant: 8),
 //            passwdInfoLabel.centerYAnchor.constraint(equalTo: passwdBoxView.centerYAnchor),
             passwdInfoLabelCenterYConstraint,
             
-            passwdTextField.leadingAnchor.constraint(equalTo: passwdBoxView.leadingAnchor, constant: 8),
-            passwdTextField.trailingAnchor.constraint(equalTo: passwdBoxView.trailingAnchor, constant: 8),
-            passwdTextField.topAnchor.constraint(equalTo: passwdBoxView.topAnchor, constant: 15),
-            passwdTextField.bottomAnchor.constraint(equalTo: passwdBoxView.bottomAnchor, constant: 2),
-            
-            passwdSecureButton.topAnchor.constraint(equalTo: passwdBoxView.topAnchor, constant: 15),
-            passwdSecureButton.bottomAnchor.constraint(equalTo: passwdBoxView.bottomAnchor, constant: -15),
-            passwdSecureButton.trailingAnchor.constraint(equalTo: passwdBoxView.trailingAnchor, constant: -8),
-            
-            passwdResetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            passwdResetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            passwdResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
-            passwdResetButton.heightAnchor.constraint(equalToConstant: textViewHeight)
+
             
         ])
     }
