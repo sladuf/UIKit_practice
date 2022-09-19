@@ -1,16 +1,31 @@
 //
-//  ViewController.swift
+//  LoginView.swift
 //  LoginView
 //
-//  Created by 김민령 on 2022/09/02.
+//  Created by 김민령 on 2022/09/17.
 //
 
+import Foundation
 import UIKit
-import SnapKit
 
-final class ViewController: UIViewController {
+
+class LoginView: UIView {
     
-    let emailBoxView: UIView = {
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        
+        setup()
+        addViews()
+        setAutoLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: view
+    
+    private lazy var emailBoxView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.darkGray
         view.layer.cornerRadius = 10
@@ -19,7 +34,7 @@ final class ViewController: UIViewController {
         return view
     }()
     
-    let emailInfoLabel: UILabel = {
+    private lazy var emailInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "이메일주소 또는 전화번호"
         label.textColor = .white
@@ -39,12 +54,12 @@ final class ViewController: UIViewController {
         tf.autocorrectionType = .no
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
-        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+//        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         
         return tf
     }()
     
-    let passwdBoxView: UIView = {
+    private lazy var passwdBoxView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.darkGray
         view.layer.cornerRadius = 10
@@ -53,7 +68,7 @@ final class ViewController: UIViewController {
         return view
     }()
     
-    let passwdInfoLabel: UILabel = {
+    private lazy var passwdInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "비밀번호"
         label.textColor = .white
@@ -75,7 +90,7 @@ final class ViewController: UIViewController {
         tf.spellCheckingType = .no
         tf.isSecureTextEntry = true
         tf.clearsOnBeginEditing = false
-        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+//        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         
         return tf
     }()
@@ -85,7 +100,7 @@ final class ViewController: UIViewController {
         button.setTitle("표시", for: .normal)
         button.setTitleColor(UIColor.white , for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        button.addTarget(self, action: #selector(passwdSecureModeSetting), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(passwdSecureModeSetting), for: .touchUpInside)
         
         return button
     }()
@@ -100,7 +115,7 @@ final class ViewController: UIViewController {
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.isEnabled = false
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -110,12 +125,13 @@ final class ViewController: UIViewController {
         button.backgroundColor = .clear
         button.setTitle("비밀번호 재설정", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         
         return button
     }()
     
-    lazy var stackView: UIStackView = {
+    
+    private lazy var stackView: UIStackView = {
         let st = UIStackView(arrangedSubviews: [emailBoxView, passwdBoxView, loginButton])
         st.spacing = 18
         st.axis = .vertical
@@ -126,27 +142,27 @@ final class ViewController: UIViewController {
     }()
     
     //텍스트 필드의 크기를 지정하는 변수
-    let textViewHeight:CGFloat = 48
+    private let textViewHeight:CGFloat = 48
     
     //autoLayout 변경을 위한 변수
-    lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailBoxView.centerYAnchor)
-    lazy var passwdInfoLabelCenterYConstraint = passwdInfoLabel.centerYAnchor.constraint(equalTo: passwdBoxView.centerYAnchor)
+    private lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailBoxView.centerYAnchor)
+    private lazy var passwdInfoLabelCenterYConstraint = passwdInfoLabel.centerYAnchor.constraint(equalTo: passwdBoxView.centerYAnchor)
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .black
+    // MARK: function
+    
+    func setup(){
+        backgroundColor = .black
         
         emailTextField.delegate = self
         passwdTextField.delegate = self
-        
-        autoLayout()
-
     }
     
+    func addViews(){
+        [stackView, passwdResetButton].forEach{ addSubview($0)}
+    }
     
-    func autoLayout(){
-        view.addSubview(stackView)
-        view.addSubview(passwdResetButton)
+    func setAutoLayout(){
+
         
         emailBoxView.addSubview(emailTextField)
         emailBoxView.addSubview(emailInfoLabel)
@@ -157,10 +173,9 @@ final class ViewController: UIViewController {
         
         
         stackView.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.centerY.equalTo(view)
-            make.leading.equalTo(view).offset(30)
-            make.trailing.equalTo(view).offset(-30)
+            make.center.equalTo(snp.center)
+            make.leading.equalTo(snp.leading).offset(30)
+            make.trailing.equalTo(snp.trailing).offset(-30)
             make.height.equalTo(textViewHeight*3 + 36)
         }
         
@@ -189,8 +204,8 @@ final class ViewController: UIViewController {
         }
         
         passwdResetButton.snp.makeConstraints { make in
-            make.leading.equalTo(view).offset(30)
-            make.trailing.equalTo(view).offset(-30)
+            make.leading.equalTo(snp.leading).offset(30)
+            make.trailing.equalTo(snp.trailing).offset(-30)
             make.top.equalTo(stackView.snp.bottom).offset(10)
             make.height.equalTo(textViewHeight)
         }
@@ -208,39 +223,10 @@ final class ViewController: UIViewController {
             
         ])
     }
-    
-    @objc func resetButtonTapped() {
-        let alert = UIAlertController(title: "비밀번호 변경", message: "비밀번호를 바꾸시겠습니까?", preferredStyle: .alert)
-        
-        let success = UIAlertAction(title: "확인", style: .default) { action in
-            print("확인 : \(action)")
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { cancel in
-            print("취소 : \(cancel)")
-        }
-        
-        alert.addAction(success)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    @objc func passwdSecureModeSetting(){
-        passwdTextField.isSecureTextEntry.toggle()
-        print("passwd secure mode : \(passwdTextField.isSecureTextEntry)")
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    @objc func loginButtonTapped() {
-        
-    }
-    
 }
 
-extension ViewController: UITextFieldDelegate {
+// MARK: view event function
+extension LoginView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -304,5 +290,15 @@ extension ViewController: UITextFieldDelegate {
     loginButton.backgroundColor = .red
     loginButton.isEnabled = true
     }
+    
+    @objc func passwdSecureModeSetting(){
+        passwdTextField.isSecureTextEntry.toggle()
+        print("passwd secure mode : \(passwdTextField.isSecureTextEntry)")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
 }
+
 
