@@ -22,7 +22,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-6I-th6">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-6I-th6">
                                 <rect key="frame" x="10" y="194" width="138.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Instance property"/>
@@ -30,7 +30,7 @@
                                     <action selector="sendPropertyData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3FI-MY-gcU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYC-qI-odX">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYC-qI-odX">
                                 <rect key="frame" x="168.5" y="194" width="63.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="segue"/>
@@ -38,7 +38,7 @@
                                     <segue destination="7F7-ny-fdK" kind="show" identifier="passingSegueData" id="LYz-Mb-V3j"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-FF-O7z">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-FF-O7z">
                                 <rect key="frame" x="252" y="194" width="79" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Instance"/>
@@ -52,7 +52,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iro-Nw-vQq">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iro-Nw-vQq">
                                 <rect key="frame" x="10" y="375" width="81" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="delegate"/>
@@ -60,7 +60,7 @@
                                     <action selector="moveDelegateVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0TU-4d-rYo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNt-Rw-wD7">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNt-Rw-wD7">
                                 <rect key="frame" x="111" y="375" width="72" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="closure"/>
@@ -68,7 +68,7 @@
                                     <action selector="moveClosureVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ogZ-3c-i2r"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mht-8p-mqb">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mht-8p-mqb">
                                 <rect key="frame" x="203" y="375" width="97" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="notification"/>
@@ -84,7 +84,9 @@
                             <constraint firstItem="k4Y-GE-Cu7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cjd-yJ-pEg"/>
                             <constraint firstItem="KNt-Rw-wD7" firstAttribute="top" secondItem="gYC-qI-odX" secondAttribute="bottom" constant="150" id="Kze-gY-iNk"/>
                             <constraint firstItem="k4Y-GE-Cu7" firstAttribute="top" secondItem="YaU-Bx-vnm" secondAttribute="top" constant="249" id="N2i-Hn-BXW"/>
+                            <constraint firstItem="YaU-Bx-vnm" firstAttribute="trailing" secondItem="mht-8p-mqb" secondAttribute="trailing" constant="10" id="O1g-SQ-pC7"/>
                             <constraint firstItem="iBQ-8P-mGl" firstAttribute="top" secondItem="YaU-Bx-vnm" secondAttribute="top" constant="50" id="QSR-Q6-XsM"/>
+                            <constraint firstItem="YaU-Bx-vnm" firstAttribute="trailing" secondItem="Zrd-FF-O7z" secondAttribute="trailing" constant="10" id="RKY-Ev-96o"/>
                             <constraint firstItem="mht-8p-mqb" firstAttribute="leading" secondItem="KNt-Rw-wD7" secondAttribute="trailing" constant="20" id="T9Y-Zb-CMj"/>
                             <constraint firstItem="iro-Nw-vQq" firstAttribute="leading" secondItem="YaU-Bx-vnm" secondAttribute="leading" constant="10" id="USO-Ce-i4D"/>
                             <constraint firstItem="KNt-Rw-wD7" firstAttribute="leading" secondItem="iro-Nw-vQq" secondAttribute="trailing" constant="20" id="dMq-Y2-XJq"/>
