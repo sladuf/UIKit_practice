@@ -7,13 +7,13 @@
 
 import Foundation
 import UIKit
-
+import SnapKit
 
 class LoginView: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        
+        self.backgroundColor = .black
         setup()
         addViews()
         setAutoLayout()

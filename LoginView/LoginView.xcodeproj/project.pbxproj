@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B905E8EE291A77650038485D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B905E8ED291A77650038485D /* SnapKit */; };
 		B950BBC528D593E60038B40E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950BBC428D593E60038B40E /* LoginView.swift */; };
 		B9651C1928C21B8300AB7585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9651C1828C21B8300AB7585 /* AppDelegate.swift */; };
 		B9651C1B28C21B8300AB7585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9651C1A28C21B8300AB7585 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8F94751A6033423AF24A23F /* Pods_LoginView.framework in Frameworks */,
+				B905E8EE291A77650038485D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,9 @@
 			dependencies = (
 			);
 			name = LoginView;
+			packageProductDependencies = (
+				B905E8ED291A77650038485D /* SnapKit */,
+			);
 			productName = LoginView;
 			productReference = B9651C1528C21B8300AB7585 /* LoginView.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +142,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					level2,
+				);
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
@@ -154,6 +162,9 @@
 				Base,
 			);
 			mainGroup = B9651C0C28C21B8300AB7585;
+			packageReferences = (
+				B905E8EC291A77650038485D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B9651C1628C21B8300AB7585 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B905E8EC291A77650038485D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B905E8ED291A77650038485D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B905E8EC291A77650038485D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9651C0D28C21B8300AB7585 /* Project object */;
 }
