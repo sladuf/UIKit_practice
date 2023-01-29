@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  LoginView
+//  ConvertVC
 //
-//  Created by 김민령 on 2022/09/02.
+//  Created by 김민령 on 2023/01/30.
 //
 
 import UIKit

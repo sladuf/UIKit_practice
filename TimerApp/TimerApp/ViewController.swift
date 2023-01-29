@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] _ in
             
+            
+            
             if slider.value > 0 {
                 
                 let second = sliderValueToSecond(value: slider.value)-1
