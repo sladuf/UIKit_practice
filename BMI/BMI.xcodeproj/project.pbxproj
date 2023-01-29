@@ -13,6 +13,7 @@
 		B98F1ED52987003A00EFDE4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B98F1ED32987003A00EFDE4D /* Main.storyboard */; };
 		B98F1ED72987003B00EFDE4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98F1ED62987003B00EFDE4D /* Assets.xcassets */; };
 		B98F1EDA2987003B00EFDE4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B98F1ED82987003B00EFDE4D /* LaunchScreen.storyboard */; };
+		B98F1EE22987035400EFDE4D /* BMIResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F1EE12987035400EFDE4D /* BMIResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B98F1ED62987003B00EFDE4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B98F1ED92987003B00EFDE4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B98F1EDB2987003B00EFDE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B98F1EE12987035400EFDE4D /* BMIResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B98F1ECD2987003A00EFDE4D /* AppDelegate.swift */,
 				B98F1ECF2987003A00EFDE4D /* SceneDelegate.swift */,
 				B98F1ED12987003A00EFDE4D /* ViewController.swift */,
+				B98F1EE12987035400EFDE4D /* BMIResultViewController.swift */,
 				B98F1ED32987003A00EFDE4D /* Main.storyboard */,
 				B98F1ED62987003B00EFDE4D /* Assets.xcassets */,
 				B98F1ED82987003B00EFDE4D /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				B98F1ED22987003A00EFDE4D /* ViewController.swift in Sources */,
 				B98F1ECE2987003A00EFDE4D /* AppDelegate.swift in Sources */,
+				B98F1EE22987035400EFDE4D /* BMIResultViewController.swift in Sources */,
 				B98F1ED02987003A00EFDE4D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
