@@ -40,9 +40,7 @@ class ViewController: UIViewController {
         
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] _ in
-            
-            
-            
+
             if slider.value > 0 {
                 
                 let second = sliderValueToSecond(value: slider.value)-1
@@ -50,6 +48,7 @@ class ViewController: UIViewController {
                 label.text = "\(second)초"
             }
             else {
+                //time over
                 slider.value = 0
                 label.text = "\(0)초"
                 timer?.invalidate()
