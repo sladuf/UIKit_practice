@@ -1,9 +1,4 @@
-//
-//  OrderViewController.swift
-//  RxSwiftApp
-//
-//  Created by 김민령 on 2023/05/24.
-//
+
 
 import UIKit
 import RxSwift

@@ -1,9 +1,4 @@
-//
-//  MenuViewModel.swift
-//  RxSwiftApp
-//
-//  Created by 김민령 on 2023/05/21.
-//
+
 
 import Foundation
 import RxSwift
@@ -79,10 +74,7 @@ class MenuViewModel : MenuViewModelType{
             .map { $0.menu.countUpdated(max(0, $0.menu.count + $0.cnt)) }
             .withLatestFrom(menus) { menu, menus in
                 menus.map{
-                    guard $0.name == menu.name else {
-                        print("update 원래꺼 \($0)")
-                        return $0 }
-                    print("update 새거 \(menu)")
+                    guard $0.name == menu.name else { return $0 }
                     return menu
                 }
             }

@@ -1,9 +1,4 @@
-//
-//  ViewController.swift
-//  RxSwiftApp
-//
-//  Created by 김민령 on 2023/05/21.
-//
+
 
 import UIKit
 import RxSwift
