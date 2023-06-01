@@ -39,7 +39,7 @@ class MenuViewModel : MenuViewModelType{
     let orderList: Observable<[ViewMenu]>
     
 
-    init(domain : MenuStore = MenuStore()){
+    init(domain : MenuRepositoryType = MenuRepository()){
         let fetching = PublishSubject<Void>()
         let clearing = PublishSubject<Void>()
         let ordering = PublishSubject<Void>()
