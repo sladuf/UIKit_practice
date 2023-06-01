@@ -31,7 +31,9 @@ class OrderViewModel : OrderViewModelType {
         itemsVatText = vat
             .map{ Currency.ko($0) }
         
-        totalPriceText = Observable.combineLatest(price, vat) { $0 + $1 }
+        // price and vat emit item only a time
+        // so, combineLatest == zip
+        totalPriceText = Observable.zip(price, vat) { $0 + $1 }
             .map{ Currency.ko($0) }
         
         totalItemCount = menus
