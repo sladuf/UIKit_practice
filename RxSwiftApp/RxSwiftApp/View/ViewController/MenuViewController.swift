@@ -72,7 +72,8 @@ class MenuViewController: UIViewController {
         viewModel.orderList
             .subscribe(onNext: {
                 guard let vc = self.storyboard?.instantiateViewController(identifier: OrderViewController.identifier) as? OrderViewController else { return }
-                vc.viewModel = OrderViewModel($0)
+//                vc.viewModel = OrderViewModel($0)
+                vc.reactor = OrderViewReactor($0)
                 
                 self.navigationController?.pushViewController(vc, animated: true)
             })
